@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<ofstream>
 using namespace std;
 struct Node {
 	Node* next;
@@ -41,7 +42,7 @@ struct List {
 	void insert(int _val, int index) {
 		Node* new_element = new Node(_val);
 		if (emptylist()) {
-			cout << "Список пустой, поэтому елемент " << _val << " будет первым" << endl;
+			cout << "Г‘ГЇГЁГ±Г®ГЄ ГЇГіГ±ГІГ®Г©, ГЇГ®ГЅГІГ®Г¬Гі ГҐГ«ГҐГ¬ГҐГ­ГІ " << _val << " ГЎГіГ¤ГҐГІ ГЇГҐГ°ГўГ»Г¬" << endl;
 			first = new_element;
 			last = new_element;
 			return;
@@ -59,7 +60,7 @@ struct List {
 			}
 		}
 		else {
-			//cout << "Индекс>=размера списка, поэтому елемент " << _val << " будет добавлен в конец" << endl;
+			//cout << "Г€Г­Г¤ГҐГЄГ±>=Г°Г Г§Г¬ГҐГ°Г  Г±ГЇГЁГ±ГЄГ , ГЇГ®ГЅГІГ®Г¬Гі ГҐГ«ГҐГ¬ГҐГ­ГІ " << _val << " ГЎГіГ¤ГҐГІ Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў ГЄГ®Г­ГҐГ¶" << endl;
 			last->next = new_element;
 			last = new_element;
 		}
@@ -86,12 +87,12 @@ struct List {
 				find_node_by_index(index)->next = p->next;
 			}
 			else {
-				cout << "Указанный индекс(" << index << ")>= размеру списка" << endl;
+				cout << "Г“ГЄГ Г§Г Г­Г­Г»Г© ГЁГ­Г¤ГҐГЄГ±(" << index << ")>= Г°Г Г§Г¬ГҐГ°Гі Г±ГЇГЁГ±ГЄГ " << endl;
 			}
 		}
 	}
 	void find_by_value(int _val) {
-		cout << "Данный елемент("<<_val<<") встречается на позициях : ";
+		cout << "Г„Г Г­Г­Г»Г© ГҐГ«ГҐГ¬ГҐГ­ГІ("<<_val<<") ГўГ±ГІГ°ГҐГ·Г ГҐГІГ±Гї Г­Г  ГЇГ®Г§ГЁГ¶ГЁГїГµ : ";
 		Node* p = first;
 		unsigned int k = 0;
 		while (p) {
@@ -116,7 +117,7 @@ struct List {
 			}
 			p = p->next;
 		}
-		cout << "Повторяющиеся елементы:";
+		cout << "ГЏГ®ГўГІГ®Г°ГїГѕГ№ГЁГҐГ±Гї ГҐГ«ГҐГ¬ГҐГ­ГІГ»:";
 		for (unsigned int i = 0; i < dupl.size(); ++i) {
 			cout << dupl.at(i) << " ";
 		}
@@ -141,7 +142,7 @@ struct List {
 			}
 			p = p->next;
 		}
-		cout << "Елементы, которые повторяются 3-4 раза:";
+		cout << "Г…Г«ГҐГ¬ГҐГ­ГІГ», ГЄГ®ГІГ®Г°Г»ГҐ ГЇГ®ГўГІГ®Г°ГїГѕГІГ±Гї 3-4 Г°Г Г§Г :";
 		for (auto& k : dupl) {
 			cout << k << " ";
 		}
@@ -150,7 +151,7 @@ struct List {
 int main() {
 	setlocale(LC_ALL, "");
 	List a(vector<int>({ 99,19,15,17 }));
-	cout << "Если индекс>=размера списка, он будет добавлен в конец"<<endl;
+	cout << "Г…Г±Г«ГЁ ГЁГ­Г¤ГҐГЄГ±>=Г°Г Г§Г¬ГҐГ°Г  Г±ГЇГЁГ±ГЄГ , Г®Г­ ГЎГіГ¤ГҐГІ Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў ГЄГ®Г­ГҐГ¶"<<endl;
 	a.insert(3, 5);
 	a.insert(3, 2);
 	a.insert(1, 0);
